@@ -1,1 +1,1 @@
-# -Study-assistant
+# Study-assistant
