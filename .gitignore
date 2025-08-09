@@ -210,4 +210,7 @@ logs/
 venv/
 .env
 LLMOPS_3.egg-info/
-results/
+results/venv/
+__pycache__/
+.env
+.pytest_cache/
