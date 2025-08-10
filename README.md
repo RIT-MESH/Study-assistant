@@ -501,13 +501,6 @@ kubectl port-forward svc/gitops-app -n argocd --address 0.0.0.0 9090:80
 ## Final Outcome
 This pipeline automates code checkout, Docker image building/pushing, Kubernetes deployment, and ArgoCD syncing. It’s a practical demonstration of DevOps skills for infrastructure roles.
 
-## Tips for Infrastructure Job Transition
-- **Portfolio**: Host this on GitHub with screenshots of Jenkins/ArgoCD UI. Link on `ritmesh.com` and your resume.
-- **Certifications**: Leverage AWS, Azure, CCNA. Consider Kubernetes (CKA) or Terraform Advanced.
-- **Japanese Market**: Highlight automation, containerization, and orchestration skills in interviews. Emphasize Japanese workplace culture (e.g., CNC role).
-- **Networking**: Share on LinkedIn or X (#DevOpsJapan) to connect with Tokyo/Osaka recruiters.
 
-## About Me
-I’m Ritesh Meshram, a versatile engineer transitioning from CNC operations to infrastructure roles, with expertise in AWS, Azure, Kubernetes, and embedded systems. Check my portfolio at [ritmesh.com](https://ritmesh.com) and YouTube at [@TechWorldEnthusiast](https://www.youtube.com/@TechWorldEnthusiast).
 
 ---
