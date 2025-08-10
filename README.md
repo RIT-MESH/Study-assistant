@@ -1,6 +1,6 @@
 # GitOps Pipeline Demo for Infrastructure Roles
 
-This repository demonstrates a **GitOps pipeline** using **GitHub**, **Docker**, **Minikube**, **Jenkins**, and **ArgoCD** deployed on an AWS EC2 instance. The project showcases skills in **CI/CD**, **Kubernetes**, **containerization**, and **Infrastructure as Code (IaC)**, aligning with Japan's tech industry demand for roles like Cloud Engineer, DevOps Engineer, and Infrastructure Specialist. It leverages my expertise in cloud (AWS/Azure), networking (CCNA), and embedded systems, transitioning from my current CNC role to infrastructure-focused positions.
+This repository demonstrates a **GitOps pipeline** using **GitHub**, **Docker**, **Minikube**, **Jenkins**, and **ArgoCD** deployed on an AWS EC2 instance. The project showcases skills in **CI/CD**, **Kubernetes**, **containerization**, and **Infrastructure as Code (IaC)**, aligning with Japan's tech industry demand for roles like Cloud Engineer, DevOps Engineer, and Infrastructure Specialist. 
 
 ![Pipeline Overview](https://via.placeholder.com/600x200.png?text=GitOps+Pipeline+Diagram) <!-- Replace with actual diagram -->
 
