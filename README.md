@@ -110,9 +110,10 @@ This pipeline automates:
   - **Storage**: 256 GB gp3 SSD
 - Launch the instance and note the **Public IPv4 address**.
 - **Skill Highlight**: AWS infrastructure management.
-
+<img width="1007" height="696" alt="スクリーンショット 2025-08-14 075923" src="https://github.com/user-attachments/assets/5ee23c04-881b-4e61-8b4d-eb589a56f4f7" />
 #### Connect to EC2 Instance
 - SSH using the key pair:
+
   ```bash
   ssh -i <your-key-pair>.pem ubuntu@<PUBLIC_IP>
   ```
