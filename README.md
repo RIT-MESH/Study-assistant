@@ -152,6 +152,10 @@ sudo systemctl enable docker.service containerd.service
   systemctl status docker
   ```
 - **Skill Highlight**: Docker setup and container management.
+<img width="751" height="108" alt="スクリーンショット 2025-08-14 091513" src="https://github.com/user-attachments/assets/f18af785-7b41-4597-aa39-58e3b59158f7" />
+
+<img width="666" height="129" alt="image" src="https://github.com/user-attachments/assets/5ca66540-b733-4fe1-a90f-5c62b3adefc0" />
+
 
 ---
 
