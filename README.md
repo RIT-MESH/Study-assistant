@@ -180,6 +180,8 @@ kubectl version --client
   kubectl cluster-info
   docker ps
   ```
+  <img width="280" height="125" alt="image" src="https://github.com/user-attachments/assets/83c41296-6cf5-4f5c-a51b-14738c67e296" />
+
 - **Skill Highlight**: Kubernetes cluster management.
 
 ---
