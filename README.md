@@ -202,6 +202,7 @@ docker run -d --name jenkins \
 docker ps
 docker logs jenkins
 ```
+<img width="891" height="485" alt="image" src="https://github.com/user-attachments/assets/85fd16ca-5417-4a2b-842e-4a4c015a5c8f" />
 
 #### Access Jenkins UI
 - Open: `http://<PUBLIC_IP>:8080`
