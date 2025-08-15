@@ -152,6 +152,10 @@ sudo systemctl enable docker.service containerd.service
   systemctl status docker
   ```
 - **Skill Highlight**: Docker setup and container management.
+<img width="751" height="108" alt="スクリーンショット 2025-08-14 091513" src="https://github.com/user-attachments/assets/f18af785-7b41-4597-aa39-58e3b59158f7" />
+
+<img width="666" height="129" alt="image" src="https://github.com/user-attachments/assets/5ca66540-b733-4fe1-a90f-5c62b3adefc0" />
+
 
 ---
 
@@ -176,6 +180,9 @@ kubectl version --client
   kubectl cluster-info
   docker ps
   ```
+  <img width="663" height="221" alt="image" src="https://github.com/user-attachments/assets/0876c432-fceb-4aee-b78b-ec28bb9acd2c" />
+
+
 - **Skill Highlight**: Kubernetes cluster management.
 
 ---
@@ -195,6 +202,7 @@ docker run -d --name jenkins \
 docker ps
 docker logs jenkins
 ```
+<img width="891" height="485" alt="image" src="https://github.com/user-attachments/assets/85fd16ca-5417-4a2b-842e-4a4c015a5c8f" />
 
 #### Access Jenkins UI
 - Open: `http://<PUBLIC_IP>:8080`
@@ -206,6 +214,9 @@ docker logs jenkins
       - TCP 31704 (ArgoCD)
     - Source: `0.0.0.0/0` (for demo; restrict in production)
 - Use admin password from `docker logs jenkins`, install suggested plugins, and create an admin user.
+
+<img width="1800" height="876" alt="image" src="https://github.com/user-attachments/assets/84bac65f-9a3a-4253-b061-256f2b875c55" />
+
 
 #### Install Plugins
 - In **Manage Jenkins → Plugins**, install:
@@ -228,6 +239,21 @@ docker restart jenkins
 ```
 - **Skill Highlight**: CI/CD pipeline setup with Jenkins.
 
+![image](https://github.com/user-attachments/assets/44b60c6b-6abd-499e-bada-63e0bce1e20f)
+
+![image](https://github.com/user-attachments/assets/118d9151-28fd-4940-b9d2-f431202ad67a)
+
+![image](https://github.com/user-attachments/assets/392e992f-ccf2-4c28-a7e5-9bbb0dd7358a)
+
+![image](https://github.com/user-attachments/assets/cc49fad2-e7fc-42cb-bca1-40fc6492811a)
+
+![image](https://github.com/user-attachments/assets/bacf0595-45f5-47a2-959f-5b454f187ae9)
+
+![image](https://github.com/user-attachments/assets/c8215b60-d8ee-4c9d-b10d-f25e1396968a)
+
+
+
+
 ---
 
 ### 5. GitHub Integration
@@ -244,6 +270,7 @@ docker restart jenkins
   - Password: GitHub token
   - ID: `github-token`
   - Description: `GitHub Token`
+<img width="1766" height="451" alt="image" src="https://github.com/user-attachments/assets/c73c6163-3a60-4b3a-b568-6255f4d0daaa" />
 
 #### Create Jenkins Pipeline
 - **Jenkins Dashboard → New Item**
@@ -255,6 +282,14 @@ docker restart jenkins
     - Repository URL: `https://github.com/RIT-MESH/gitops-demo.git`
     - Credentials: `github-token`
     - Branch: `main`
+<img width="1680" height="860" alt="image" src="https://github.com/user-attachments/assets/b53d8f2d-d4b4-4a70-8c6f-e0090677d6da" />
+
+<img width="1516" height="845" alt="image" src="https://github.com/user-attachments/assets/9f648d2b-2c16-4825-aabb-a1fd4278070d" />
+
+<img width="1471" height="813" alt="image" src="https://github.com/user-attachments/assets/8de75fbd-fec6-48ad-9ee2-af79a2e828ce" />
+
+<img width="1658" height="816" alt="image" src="https://github.com/user-attachments/assets/f9cbddad-0139-4574-9a6d-e2fbc0d9d07d" />
+
 
 #### Create Jenkinsfile
 ```bash
