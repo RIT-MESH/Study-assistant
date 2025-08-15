@@ -375,6 +375,9 @@ pipeline {
   - Install automatically: Check
   - Source: docker.com
 
+<img width="884" height="881" alt="image" src="https://github.com/user-attachments/assets/4df9b6b9-2c3e-4e10-84a7-bad23939ca8c" />
+
+
 #### Create DockerHub Repository
 - Create: `ritmesh/gitops-demo` on [DockerHub](https://hub.docker.com).
 
@@ -387,15 +390,18 @@ pipeline {
 #### Add DockerHub Credentials
 - **Manage Jenkins → Credentials → System → Global → Add Credentials**
   - Kind: Username with password
-  - Username: `ritmesh`
+  - Username: `ritmesh1`
   - Password: DockerHub token
-  - ID: `gitops-dockerhub`
+  - ID: `dockerhub-token`
   - Description: `DockerHub Access Token`
+<img width="723" height="731" alt="image" src="https://github.com/user-attachments/assets/3de74850-0781-4742-b02e-3ad8f6fdc309" />
+
 
 #### Trigger Pipeline
 - Push changes and verify image: `https://hub.docker.com/r/ritmesh/gitops-demo`.
 
 ---
+<img width="907" height="809" alt="image" src="https://github.com/user-attachments/assets/a312d794-9c8c-49ee-ae7d-83b0da1d4b34" />
 
 ### 7. Install ArgoCD - Part 1
 
