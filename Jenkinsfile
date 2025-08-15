@@ -27,7 +27,11 @@ pipeline {
             credentialsId: "${GITHUB_CREDENTIALS_ID}"
 
         // avoid "unsafe repo" warnings inside Jenkins container
-        sh 'git config --global --add safe.directory "$PWD"'
+        sh '''
+          #!/usr/bin/env bash
+          set -euo pipefail
+          git config --global --add safe.directory "$PWD"
+        '''
       }
     }
 
@@ -55,7 +59,8 @@ pipeline {
     stage('Update deployment YAML with new tag') {
       steps {
         sh '''
-          set -euxo pipefail
+          #!/usr/bin/env bash
+          set -euo pipefail
           sed -E -i 's#(^\\s*image:\\s*).+#\\1'"${DOCKER_HUB_REPO}:${IMAGE_TAG}"'#' manifests/deployment.yaml
           echo "Updated manifests/deployment.yaml to ${DOCKER_HUB_REPO}:${IMAGE_TAG}"
           grep -nE '^\\s*image:' manifests/deployment.yaml || true
@@ -69,7 +74,8 @@ pipeline {
                                           usernameVariable: 'GIT_USER',
                                           passwordVariable: 'GIT_PASS')]) {
           sh '''
-            set -euxo pipefail
+            #!/usr/bin/env bash
+            set -euo pipefail
             git config user.name  "RIT-MESH"
             git config user.email "ritzcloud12@gmail.com"
             git add manifests/deployment.yaml
@@ -83,15 +89,16 @@ pipeline {
     stage('Install kubectl & argocd cli (if missing)') {
       steps {
         sh '''
-          set -euxo pipefail
-          command -v kubectl >/dev/null 2>&1 || {
+          #!/usr/bin/env bash
+          set -euo pipefail
+          if ! command -v kubectl >/dev/null 2>&1; then
             curl -LO "https://dl.k8s.io/release/$(curl -Ls https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
             chmod +x kubectl && mv kubectl /usr/local/bin/kubectl
-          }
-          command -v argocd >/dev/null 2>&1 || {
+          fi
+          if ! command -v argocd >/dev/null 2>&1; then
             curl -sSL -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/latest/download/argocd-linux-amd64
             chmod +x /usr/local/bin/argocd
-          }
+          fi
         '''
       }
     }
@@ -101,7 +108,9 @@ pipeline {
         // Use the kubeconfig Secret file (no extra plugin needed)
         withCredentials([file(credentialsId: "${KUBECONFIG_CREDENTIALS_ID}", variable: 'KUBECONFIG')]) {
           sh '''
-            set -euxo pipefail
+            #!/usr/bin/env bash
+            set -euo pipefail
+
             # sanity check cluster
             kubectl get ns
 
