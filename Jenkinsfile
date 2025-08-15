@@ -76,7 +76,7 @@ pipeline {
         stage('Apply Kubernetes & Sync App with ArgoCD') {
             steps {
                 script {
-                    kubeconfig(credentialsId: 'config', serverUrl: 'https://192.168.49.2:8443') {
+                    withKubeConfig(credentialsId: 'config', serverUrl: 'https://192.168.49.2:8443') {
                         sh '''
                         argocd login 3.81.39.213:30241 --username admin --password $(kubectl get secret -n argocd argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d) --insecure
                         argocd app sync study
