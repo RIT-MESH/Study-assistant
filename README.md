@@ -402,6 +402,8 @@ pipeline {
 
 ---
 <img width="907" height="809" alt="image" src="https://github.com/user-attachments/assets/a312d794-9c8c-49ee-ae7d-83b0da1d4b34" />
+<img width="1270" height="595" alt="image" src="https://github.com/user-attachments/assets/133298b3-af14-4aeb-99ea-17959d47b680" />
+
 
 ### 7. Install ArgoCD - Part 1
 
