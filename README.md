@@ -495,8 +495,9 @@ cat /home/ubuntu/.minikube/profiles/minikube/client.key | base64 -w 0
   - Name: `gitops-demo`
   - Project: `default`
   - Repo URL: `https://github.com/RIT-MESH/gitops-demo.git`
-  - Username: `RIT-MESH`
+  - Username: `study`
   - Password: GitHub token
+<img width="1532" height="271" alt="image" src="https://github.com/user-attachments/assets/a1b273a5-b32f-4835-9f0f-b2e60c7264cd" />
 
 #### Create ArgoCD Application
 - **Applications → New App**
