@@ -215,6 +215,9 @@ docker logs jenkins
     - Source: `0.0.0.0/0` (for demo; restrict in production)
 - Use admin password from `docker logs jenkins`, install suggested plugins, and create an admin user.
 
+<img width="1800" height="876" alt="image" src="https://github.com/user-attachments/assets/84bac65f-9a3a-4253-b061-256f2b875c55" />
+
+
 #### Install Plugins
 - In **Manage Jenkins → Plugins**, install:
   - Docker
@@ -235,6 +238,21 @@ exit
 docker restart jenkins
 ```
 - **Skill Highlight**: CI/CD pipeline setup with Jenkins.
+
+![image](https://github.com/user-attachments/assets/44b60c6b-6abd-499e-bada-63e0bce1e20f)
+
+![image](https://github.com/user-attachments/assets/118d9151-28fd-4940-b9d2-f431202ad67a)
+
+![image](https://github.com/user-attachments/assets/392e992f-ccf2-4c28-a7e5-9bbb0dd7358a)
+
+![image](https://github.com/user-attachments/assets/cc49fad2-e7fc-42cb-bca1-40fc6492811a)
+
+![image](https://github.com/user-attachments/assets/bacf0595-45f5-47a2-959f-5b454f187ae9)
+
+![image](https://github.com/user-attachments/assets/c8215b60-d8ee-4c9d-b10d-f25e1396968a)
+
+
+
 
 ---
 
