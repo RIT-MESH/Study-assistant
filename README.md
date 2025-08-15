@@ -429,16 +429,21 @@ kubectl get all -n argocd
 kubectl edit svc argocd-server -n argocd
 ```
 - Change `type: ClusterIP` to `type: NodePort`.
+<img width="429" height="151" alt="image" src="https://github.com/user-attachments/assets/8fecd743-05fa-4903-994d-309b47b640e7" />
+
 - Verify:
   ```bash
   kubectl get svc -n argocd
   ```
+<img width="398" height="134" alt="image" src="https://github.com/user-attachments/assets/08d0ed78-5aca-47ff-8460-a7c9e73f27a5" />
 
 #### Access ArgoCD UI
 ```bash
 kubectl port-forward --address 0.0.0.0 svc/argocd-server 31704:80 -n argocd
 ```
 - Open: `http://<PUBLIC_IP>:31704`
+  <img width="1906" height="820" alt="image" src="https://github.com/user-attachments/assets/debb84fb-88de-4686-9217-ed51f03b8648" />
+
 - Get admin password:
   ```bash
   kubectl get secret -n argocd argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
