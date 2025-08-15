@@ -517,11 +517,17 @@ cat /home/ubuntu/.minikube/profiles/minikube/client.key | base64 -w 0
 kubectl get deploy -n argocd
 kubectl get pods -n argocd
 ```
+<img width="728" height="297" alt="image" src="https://github.com/user-attachments/assets/35e75dcd-75e5-4ff1-865a-ddc205d6a5f5" />
+
+
 
 #### Allow External Access
 ```bash
 minikube tunnel
 ```
+<img width="449" height="172" alt="image" src="https://github.com/user-attachments/assets/858416e8-7a41-49a6-b029-857e337cb62a" />
+
+
 ```bash
 kubectl port-forward svc/gitops-app -n argocd --address 0.0.0.0 9090:80
 ```
