@@ -249,7 +249,9 @@ docker restart jenkins
 
 ![image](https://github.com/user-attachments/assets/bacf0595-45f5-47a2-959f-5b454f187ae9)
 
-![image](https://github.com/user-attachments/assets/c8215b60-d8ee-4c9d-b10d-f25e1396968a)
+![image](https://github.com/user-attachments/assets/119db904-6da0-448a-ad70-79b6dd2311fb)
+
+
 
 
 
@@ -412,12 +414,15 @@ pipeline {
 kubectl create namespace argocd
 kubectl get namespace
 ```
+<img width="535" height="119" alt="image" src="https://github.com/user-attachments/assets/52cd4c77-2600-48c7-a5d1-d66534dceed9" />
 
 #### Install ArgoCD
 ```bash
 kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 kubectl get all -n argocd
 ```
+<img width="989" height="526" alt="image" src="https://github.com/user-attachments/assets/256d62bb-b8bb-4c81-bada-f86d3ba8f284" />
+
 
 #### Change to NodePort
 ```bash
