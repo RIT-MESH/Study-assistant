@@ -363,6 +363,9 @@ pipeline {
 - **Skill Highlight**: Automation with Jenkins pipelines.
 
 ---
+<img width="780" height="121" alt="image" src="https://github.com/user-attachments/assets/757815cb-0121-4184-943a-7d10a1ae0290" />
+
+<img width="1327" height="817" alt="image" src="https://github.com/user-attachments/assets/3a8391fb-8486-4622-a2ec-ed3cd10b87bf" />
 
 ### 6. Build and Push Docker Image
 
