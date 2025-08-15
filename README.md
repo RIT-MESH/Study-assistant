@@ -270,6 +270,7 @@ docker restart jenkins
   - Password: GitHub token
   - ID: `github-token`
   - Description: `GitHub Token`
+<img width="1766" height="451" alt="image" src="https://github.com/user-attachments/assets/c73c6163-3a60-4b3a-b568-6255f4d0daaa" />
 
 #### Create Jenkins Pipeline
 - **Jenkins Dashboard → New Item**
@@ -281,6 +282,14 @@ docker restart jenkins
     - Repository URL: `https://github.com/RIT-MESH/gitops-demo.git`
     - Credentials: `github-token`
     - Branch: `main`
+<img width="1680" height="860" alt="image" src="https://github.com/user-attachments/assets/b53d8f2d-d4b4-4a70-8c6f-e0090677d6da" />
+
+<img width="1516" height="845" alt="image" src="https://github.com/user-attachments/assets/9f648d2b-2c16-4825-aabb-a1fd4278070d" />
+
+<img width="1471" height="813" alt="image" src="https://github.com/user-attachments/assets/8de75fbd-fec6-48ad-9ee2-af79a2e828ce" />
+
+<img width="1658" height="816" alt="image" src="https://github.com/user-attachments/assets/f9cbddad-0139-4574-9a6d-e2fbc0d9d07d" />
+
 
 #### Create Jenkinsfile
 ```bash
