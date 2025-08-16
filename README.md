@@ -2,7 +2,8 @@
 
 This repository demonstrates a **GitOps pipeline** using **GitHub**, **Docker**, **Minikube**, **Jenkins**, and **ArgoCD** deployed on an AWS EC2 instance. The project showcases skills in **CI/CD**, **Kubernetes**, **containerization**, and **Infrastructure as Code (IaC)**, aligning with Japan's tech industry demand for roles like Cloud Engineer, DevOps Engineer, and Infrastructure Specialist. 
 
-![Pipeline Overview](https://via.placeholder.com/600x200.png?text=GitOps+Pipeline+Diagram) <!-- Replace with actual diagram -->
+<img width="1726" height="713" alt="image" src="https://github.com/user-attachments/assets/3b512dd9-92d5-43ed-8674-164fb955ca36" />
+ <!-- Replace with actual diagram -->
 
 ## Project Overview
 
@@ -546,6 +547,7 @@ kubectl port-forward svc/gitops-app -n argocd --address 0.0.0.0 9090:80
   - Events: `push`
   - Enable SSL: If using HTTPS
   - Click: **Add webhook**
+<img width="1003" height="785" alt="image" src="https://github.com/user-attachments/assets/c04f1aee-cf39-464e-9f99-2c6fdeb37112" />
 
 #### Configure Jenkins Webhook
 - **Jenkins → Pipeline → Configure**
