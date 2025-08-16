@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: llmops-app
-        image: ritzmesh1/studyai:v84
+        image: ritzmesh1/studyai:v85
         ports:
         - containerPort: 8501
         env:
