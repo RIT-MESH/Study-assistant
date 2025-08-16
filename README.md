@@ -534,6 +534,8 @@ kubectl port-forward svc/gitops-app -n argocd --address 0.0.0.0 9090:80
 - Access: `http://<PUBLIC_IP>:9090`
 
 ---
+<img width="1749" height="862" alt="image" src="https://github.com/user-attachments/assets/31a29ff8-c14c-4037-a25e-61dfddecf768" />
+
 
 ### 10. Setup Webhooks
 
