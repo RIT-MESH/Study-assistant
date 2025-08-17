@@ -3,25 +3,24 @@ import streamlit as st
 from dotenv import load_dotenv
 from src.utils.helpers import *
 from src.generator.question_generator import QuestionGenerator
+
 load_dotenv()
 
-
 def main():
-    st.set_page_config(page_title="JLPT N1-N2 Practice Quiz" , page_icon="📝")
+    st.set_page_config(page_title="JLPT N1-N2 Practice Quiz", page_icon="📝")
 
-    if 'quiz_manager'not in st.session_state:
+    if 'quiz_manager' not in st.session_state:
         st.session_state.quiz_manager = QuizManager()
 
-    if 'quiz_generated'not in st.session_state:
+    if 'quiz_generated' not in st.session_state:
         st.session_state.quiz_generated = False
 
-    if 'quiz_submitted'not in st.session_state:
+    if 'quiz_submitted' not in st.session_state:
         st.session_state.quiz_submitted = False
 
-    if 'rerun_trigger'not in st.session_state:
+    if 'rerun_trigger' not in st.session_state:
         st.session_state.rerun_trigger = False
         
-
     st.title("JLPT N1-N2 Practice Quiz Generator")
 
     st.sidebar.header("Quiz Settings")
@@ -29,13 +28,13 @@ def main():
     # Changed the topic input to a level selector for JLPT
     level = st.sidebar.selectbox(
         "Select JLPT Level",
-        ["N1" , "N2"],
+        ["N1", "N2"],
         index=0
     )
 
     # Changed question type to be specific to JLPT sections
     question_type = st.sidebar.selectbox(
-        "Select Question Type" ,
+        "Select Question Type",
         ["Grammar (文法)", "Vocabulary (語彙)", "Reading (読解)"],
         index=0
     )
@@ -44,10 +43,9 @@ def main():
     difficulty_mapping = {"Grammar (文法)": "Grammar", "Vocabulary (語彙)": "Vocabulary", "Reading (読解)": "Reading Comprehension"}
     topic = f"JLPT {level} {difficulty_mapping[question_type]}"
 
-
-    num_questions=st.sidebar.number_input(
+    num_questions = st.sidebar.number_input(
         "Number of Questions",
-        min_value=1,  max_value=10 , value=5
+        min_value=1, max_value=10, value=5
     )
     
     if st.sidebar.button("Generate Quiz"):
@@ -55,12 +53,12 @@ def main():
 
         generator = QuestionGenerator()
         # The 'difficulty' parameter is now implicitly handled by the detailed topic string
-        succces = st.session_state.quiz_manager.generate_questions(
+        success = st.session_state.quiz_manager.generate_questions(
             generator,
             topic, "Multiple Choice", "Hard", num_questions
         )
 
-        st.session_state.quiz_generated= succces
+        st.session_state.quiz_generated = success
         rerun()
 
     if st.session_state.quiz_generated and st.session_state.quiz_manager.questions:
@@ -79,10 +77,9 @@ def main():
         if not results_df.empty:
             correct_count = results_df["is_correct"].sum()
             total_questions = len(results_df)
-            score_percentage = (correct_count/total_questions)*100
+            score_percentage = (correct_count / total_questions) * 100
             st.write(f"**Your Score: {score_percentage:.2f}%** ({correct_count} out of {total_questions} correct)")
             st.markdown("---")
-
 
             for _, result in results_df.iterrows():
                 question_num = result['question_number']
@@ -95,11 +92,10 @@ def main():
                 
                 st.markdown("-------")
 
-            
             if st.button("Save Results"):
                 saved_file = st.session_state.quiz_manager.save_to_csv()
                 if saved_file:
-                    with open(saved_file,'rb') as f:
+                    with open(saved_file, 'rb') as f:
                         st.download_button(
                             label="Download Results",
                             data=f.read(),
@@ -109,7 +105,7 @@ def main():
                 else:
                     st.warning("No results available to save.")
 
-if __name__=="__main__":
+if __name__ == "__main__":
     main()
 
     
