@@ -126,7 +126,7 @@ This pipeline automates:
 
 #### Clone Repository
 ```bash
-git clone https://github.com/RIT-MESH/gitops-demo.git
+git clone https://github.com/RIT-MESH/Study-assistant.git
 cd gitops-demo
 ls
 ```
@@ -282,7 +282,7 @@ docker restart jenkins
   - Pipeline:
     - Definition: Pipeline script from SCM
     - SCM: Git
-    - Repository URL: `https://github.com/RIT-MESH/gitops-demo.git`
+    - Repository URL: `https://github.com/RIT-MESH/Study-assistant.git`
     - Credentials: `github-token`
     - Branch: `main`
 <img width="1680" height="860" alt="image" src="https://github.com/user-attachments/assets/b53d8f2d-d4b4-4a70-8c6f-e0090677d6da" />
@@ -308,20 +308,20 @@ pipeline {
         stage('Checkout GitHub') {
             steps {
                 echo 'Checking out code...'
-                checkout scmGit(branches: [[name: '*/main']], userRemoteConfigs: [[credentialsId: 'github-token', url: 'https://github.com/RIT-MESH/gitops-demo.git']])
+                checkout scmGit(branches: [[name: '*/main']], userRemoteConfigs: [[credentialsId: 'github-token', url: 'https://github.com/RIT-MESH/Study-assistant.git']])
             }
         }
         stage('Build Docker Image') {
             steps {
                 echo 'Building Docker image...'
-                sh 'docker build -t ritmesh/gitops-demo:latest .'
+                sh 'docker build -t ritmesh/stydyai:latest .'
             }
         }
         stage('Push to DockerHub') {
             steps {
                 echo 'Pushing to DockerHub...'
                 sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
-                sh 'docker push ritmesh/gitops-demo:latest'
+                sh 'docker push ritmesh/studyai:latest'
             }
         }
         stage('Install Kubectl & ArgoCD CLI') {
@@ -345,7 +345,7 @@ pipeline {
                     export KUBECONFIG=$KUBECONFIG
                     kubectl apply -f manifests/
                     argocd login <ARGOCD_SERVER_IP>:31704 --username admin --password $(kubectl get secret -n argocd argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d) --insecure
-                    argocd app sync gitops-app
+                    argocd app sync study
                     '''
                 }
             }
@@ -356,8 +356,8 @@ pipeline {
 - Save: `Esc`, `:wq!`.
 - Push to GitHub:
   ```bash
-  git config --global user.email "contact@ritmesh.com"
-  git config --global user.name "RIT-MESH"
+  git config --global user.email "enteryour email here"
+  git config --global user.name "your name"
   git add .
   git commit -m "Add Jenkinsfile"
   git push origin main
@@ -382,11 +382,11 @@ pipeline {
 
 
 #### Create DockerHub Repository
-- Create: `ritmesh/gitops-demo` on [DockerHub](https://hub.docker.com).
+- Create: `ritmesh/studyai` on [DockerHub](https://hub.docker.com).
 
 #### Generate DockerHub Token
 - **DockerHub → Account Settings → Security → New Access Token**
-  - Name: `gitops-access`
+  - Name: `llmops-token-1`
   - Permissions: Read/Write
   - Copy token.
 
@@ -401,7 +401,7 @@ pipeline {
 
 
 #### Trigger Pipeline
-- Push changes and verify image: `https://hub.docker.com/r/ritmesh/gitops-demo`.
+- Push changes and verify image: `https://hub.docker.com/r/ritmesh/studyai`.
 
 ---
 <img width="907" height="809" alt="image" src="https://github.com/user-attachments/assets/a312d794-9c8c-49ee-ae7d-83b0da1d4b34" />
@@ -502,7 +502,7 @@ cat /home/ubuntu/.minikube/profiles/minikube/client.key | base64 -w 0
 
 #### Create ArgoCD Application
 - **Applications → New App**
-  - Name: `gitops-app`
+  - Name: `study`
   - Project: `default`
   - Sync Policy: Automatic
   - Check: Auto-sync, Self Heal
